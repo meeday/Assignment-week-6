@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <h1>Weather Dashboard</h1>
+        </header>
+        <div class="container">
+            <div class="search-side">
+                <h3>Search City</h3>
+                <div class="search-bar">
+                    <input id="cityname" type="text" placeholder="birmingham, GB">
+                    <div class="search"></div>
+                </div>
+                <div class="search-list">
+                    <ul class="location-list">
+
+                    </ul>
+                </div>
+            </div>
+            <div class="weather-side">
+                <div class="weather-gradient">
+                    <p><span class="citynamedisplay"></span></p>
+                </div>
+                <div class="weather-container">
+                    <img id="wicon" src="" alt="Weather icon">
+                    <p><span class="temp"></span> </p>
+                    <p><span class="desc"></span> </p>
+                </div>
+
+            </div>
+            <div class="info-side">
+                <div class="today-info-container">
+                    <div class="today-info">
+                        <div>
+                            <div class="clear"></div>
+                        </div>
+                        <div>
+                            <p><strong>Humidity:</strong><span class="humidity"></span></p>
+                            <div class="clear"></div>
+                        </div>
+                        <div>
+                            <p><strong>Wind Speed:</strong><span class="wind"></span></p>
+                            <div class="clear"></div>
+                        </div>
+                        <div>
+                            <p><strong>UV index:</strong><span class="uvindex"></span></p>
+                            <div class="clear"></div>
+                            <div class="UV-container">
+                                <div id="low" class="grid-item">LOW</div>
+                                <div id="moderate" class="grid-item">MODERATE</div>
+                                <div id="high" class="grid-item">HIGH</div>
+                                <div id="very-high" class="grid-item">VERY HIGH</div>
+                                <div id="extreme" class="grid-item">EXTREME</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="week-container">
+                    <h3>5-Day Forecast </h3>
+                    <div class="week-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>
