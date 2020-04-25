@@ -1,30 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
 
 :root {
-    --gradient: linear-gradient(135deg, #72EDF2 10%, #5151E5 100%);
-    
-    
+    --gradient: linear-gradient(135deg, #72EDF2 10%, #5151E5 100%);  
 }
 
+/* general styling for the page*/
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    /*line-height: 1.25em;*/
-}
-
-.clear {
-    clear: both;
-}
-
-h1,
-h3 {
-    padding: 5px;
-    margin: 10px;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    justify-content: center;
-    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -42,7 +25,9 @@ body {
     justify-content: center;
 }
 
-
+.clear {
+    clear: both;
+}
 .container {
     border-radius: 25px;
     -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
@@ -50,9 +35,19 @@ body {
     background-color: #222831;
     color: #ffffff;
     height: 400px;
-
 }
 
+h1,
+h3 {
+    padding: 5px;
+    margin: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+}
+/*Search section styling*/
 .search-side {
     position: relative;
     height: 100%;
@@ -78,141 +73,7 @@ body {
     box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
     float: left;
 }
-
-.weather-side {
-    position: relative;
-    height: 100%;
-    border-radius: 25px;
-    background-image: url("https://images.unsplash.com/photo-1559963110-71b394e7494d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
-    width: 300px;
-    -webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
-    -webkit-transition: -webkit-transform 300ms ease;
-    float: left;
-}
-
-.weather-side:hover {
-    -webkit-transform: scale(1.1) perspective(1500px) rotateY(10deg);
-    transform: scale(1.1) perspective(1500px) rotateY(10deg);
-}
-
-.weather-gradient {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-image: var(--gradient);
-    border-radius: 25px;
-    opacity: 0.8;  
-}
-
-.weather-gradient>p{
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    font-size: 2em;
-    justify-content: center;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.weather-container {
-    position: absolute;
-    width: 100%;
-    left: 28%;
-    top: 30%;
-    justify-content: flex-end;
-}
-
-.weather-container > p > .temp {
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-    margin: 0;
-	font-weight: 700;
-	font-size: 3em;
-}
-
-.weather-container > p > .desc {
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-    margin: 0;
-	font-weight: 600;
-	font-size: 1em;
-}
-
-.info-side {
-    position: relative;
-    float: left;
-    height: 100%;
-    padding-top: 25px;
-}
-
-.today-info {
-    padding: 15px;
-    margin: 0 25px 25px 25px;
-    box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25); 
-    border-radius: 10px;
-    font-family: 'Montserrat', sans-serif;
-}
- .week-container> h2 {
-     margin-left: 30px;
- }
-
-.week-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 35px;
-    -webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
-    box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-}
-
-.week-list> .forecast {
-    float: left;
-    margin: 2px;
-    cursor: pointer;
-    -webkit-transition: 200ms ease;
-    -o-transition: 200ms ease;
-    transition: 200ms ease;
-    border-radius: 10px;
-    background:  rgb(91, 97, 97);
-    width: 130px;
-    border: 0.5px solid rgba(0, 0, 0, 0.2);
-}
-
-.week-list> .forecast:hover {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-    color: #222831;
-    -webkit-box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2)
-}
-
-.week-list> .forecast.active {
-    color: #222831;
-    border-radius: 10px;
-}
-
-.week-list> .forecast > h3 {
-    display: block;
-    margin: 10px 0 0 0;
-    text-align: center;
-}
-
-.week-list> .forecast >img {
-    display: block;
-    height: 50px;
-    width: auto;
-    margin: 0 auto;
-}
-
-.week-list>.forecast > p {
-    display: block;
-    text-align: center;
-    margin: 10px 0 0 0;
-    font-weight: 700;
-}
+/* Search bar styling */
 
 @import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
 
@@ -339,12 +200,106 @@ body {
     opacity: 1;
     font-weight: bolder;
 }
+
+/*weather-side styling*/
+.weather-side {
+    position: relative;
+    height: 100%;
+    border-radius: 25px;
+    background-image: url("https://images.unsplash.com/photo-1559963110-71b394e7494d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
+    width: 300px;
+    -webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+    -webkit-transition: -webkit-transform 300ms ease;
+    float: left;
+}
+
+.weather-side:hover {
+    -webkit-transform: scale(1.1) perspective(1500px) rotateY(10deg);
+    transform: scale(1.1) perspective(1500px) rotateY(10deg);
+}
+
+.weather-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: var(--gradient);
+    border-radius: 25px;
+    opacity: 0.8;  
+}
+
+.weather-gradient>p{
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.weather-container {
+    position: absolute;
+    width: 100%;
+    left: 28%;
+    top: 30%;
+    justify-content: flex-end;
+}
+
+.weather-container > p > .temp {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    margin: 0;
+	font-weight: 700;
+	font-size: 3em;
+}
+
+.weather-container > p > .desc {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    margin: 0;
+	font-weight: 600;
+	font-size: 1em;
+}
+
+/*Info-side styling*/
+
+.info-side {
+    position: relative;
+    float: left;
+    height: 100%;
+    padding-top: 25px;
+}
+
+.today-info {
+    padding: 15px;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25); 
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+ .week-container> h2 {
+     margin-left: 30px;
+ }
+
+.week-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 35px;
+    -webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+/* Styling for divs containing humidity, wind-speed, and UV index*/
+
 .humidity, .wind, .uvindex {
     margin-left: 15px;
     color: white;
     font-weight: bold;
 }
-
+/* styling for the UV index scale key*/
 .UV-container {
     display: flex;
 }
@@ -387,4 +342,56 @@ body {
     border: solid 1px rgba(0, 0, 0, 0.2);
     margin: 10px;
 }
+
+/*forecast div styling*/
+
+.week-list> .forecast {
+    float: left;
+    margin: 2px;
+    cursor: pointer;
+    -webkit-transition: 200ms ease;
+    -o-transition: 200ms ease;
+    transition: 200ms ease;
+    border-radius: 10px;
+    background:  rgb(91, 97, 97);
+    width: 130px;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.week-list> .forecast:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    color: #222831;
+    -webkit-box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2)
+}
+
+.week-list> .forecast.active {
+    color: #222831;
+    border-radius: 10px;
+}
+
+.week-list> .forecast > h3 {
+    display: block;
+    margin: 10px 0 0 0;
+    text-align: center;
+}
+
+.week-list> .forecast >img {
+    display: block;
+    height: 50px;
+    width: auto;
+    margin: 0 auto;
+}
+
+.week-list>.forecast > p {
+    display: block;
+    text-align: center;
+    margin: 10px 0 0 0;
+    font-weight: 700;
+}
+
+
+
 

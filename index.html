@@ -14,10 +14,11 @@
             <h1>Weather Dashboard</h1>
         </header>
         <div class="container">
+            <!--search section-->
             <div class="search-side">
                 <h3>Search City</h3>
                 <div class="search-bar">
-                    <input id="cityname" type="text" placeholder="birmingham, GB">
+                    <input id="cityname" type="text" placeholder="Birmingham, GB">
                     <div class="search"></div>
                 </div>
                 <div class="search-list">
@@ -26,6 +27,7 @@
                     </ul>
                 </div>
             </div>
+            <!--This section displays the city name, today's date, temperature and a description of the weather conditions-->
             <div class="weather-side">
                 <div class="weather-gradient">
                     <p><span class="citynamedisplay"></span></p>
@@ -35,8 +37,8 @@
                     <p><span class="temp"></span> </p>
                     <p><span class="desc"></span> </p>
                 </div>
-
             </div>
+            <!--This section contains the humidity, wind-speed and UV index of the searched city-->
             <div class="info-side">
                 <div class="today-info-container">
                     <div class="today-info">
@@ -64,6 +66,7 @@
                         </div>
                     </div>
                 </div>
+                <!--This section contains the five day forecast that is genereated in the javascript file-->
                 <div class="week-container">
                     <h3>5-Day Forecast </h3>
                     <div class="week-list"></div>
