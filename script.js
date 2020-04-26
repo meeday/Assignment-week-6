@@ -1,11 +1,4 @@
 $(document).ready(function () {
-    // to get searches from local storage that were saved and display them in the searches list
-    var itemsArray = localStorage.getItem('items') ?
-    JSON.parse(localStorage.getItem('items')) : [];
-    for ( var i = 0; i<itemsArray.length; i++) {
-        var list = $("<p>").text(itemsArray[i])
-        $(".location-list").append(list);
-    }
     var cityName = "";
     //to hide the sections that contain data until after a search has been made
     $(".weather-side").css("display", "none");
@@ -31,7 +24,7 @@ $(document).ready(function () {
     // create a list of locations already searched
     var createList = function () {
         var button = $("<p>").text(cityName);
-        button.addClass("locationname list-group-item list-group-item-action");
+        button.addClass("list-group-item list-group-item-action");
         //each p tag generated is given a button attribute so the user doesn't have to type the cityname again to search the cursor turns into a pointer when you hover over these tags(done in css) 
         button.attr("type", "button");
         $(".location-list").prepend(button);
@@ -49,11 +42,15 @@ $(document).ready(function () {
         cityName = event.target.innerText;
         renderWeather();
         $(".week-list").empty();
-        //console.log(cityName);
-    });
+        console.log(event);
+
+
+    })
+
 
     // display current weather
     var renderWeather = function () {
+
         var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric&appid=c8a87a10c722a1c854c14163a184e2a4";
 
         var longtitude;
@@ -72,8 +69,8 @@ $(document).ready(function () {
             //console.log(response.main.temp);
             //console.log(response.main.humidity);
             //console.log(response.wind.speed);
-            //console.log(response.coord.lon);
-            //console.log(response.coord.lat);
+            console.log(response.coord.lon);
+            console.log(response.coord.lat);
 
             citynamedisplay = response.name;
             iconcode = response.weather[0].icon;
@@ -144,7 +141,7 @@ $(document).ready(function () {
                 url: thirdqueryURL,
                 method: "GET"
             }).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 var fivedaysweather = response.list;
                 // i = 8 in the for loop because the api used is 5 day/ 3 hour forecast data 24hrs/3 = 8 sets of data per day
                 // this was done to make sure that the data given is the next days instead of 3 hours from when the Ajax call was made
@@ -180,7 +177,16 @@ $(document).ready(function () {
     }
 
 
+    // to get searches from local storage that were saved and display them in the searches list
 
-
+    var itemsArray = localStorage.getItem('items') ?
+        JSON.parse(localStorage.getItem('items')) : [];
+    for (var i = 0; i < itemsArray.length && i < 8; i++) {
+        var list = $("<p>").text(itemsArray[i])
+        list.addClass("locationname list-group-item list-group-item-action");
+        list.attr("type", "button");
+        list.attr("data-set", itemsArray[i]);
+        $(".location-list").append(list);
+    }
 
 });
