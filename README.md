@@ -41,12 +41,12 @@ https://meeday.github.io/Assignment-week-6/index.html
 
 
 __IMAGES__
-![applicationImages](1.png)
-![applicationImages](2.png)
-![applicationImages](3.png)
-![applicationImages](4.png)
-![applicationImages](5.png)
-![applicationImages](6.png)
-![applicationImages](7.png)
+![applicationImages](ScreenShots/1.png)
+![applicationImages](ScreenShots/2.png)
+![applicationImages](ScreenShots/3.png)
+![applicationImages](ScreenShots/4.png)
+![applicationImages](ScreenShots/5.png)
+![applicationImages](ScreenShots/6.png)
+![applicationImages](ScreenShots/7.png)
 
 
