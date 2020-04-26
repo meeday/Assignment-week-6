@@ -40,9 +40,9 @@ $(document).ready(function () {
     //event listener added to the p tags generated above 
     $(".location-list").on("click", function (event) {
         cityName = event.target.innerText;
-        renderWeather();
+        renderWeather(cityName);
         $(".week-list").empty();
-        console.log(event);
+        
 
 
     })
@@ -69,8 +69,8 @@ $(document).ready(function () {
             //console.log(response.main.temp);
             //console.log(response.main.humidity);
             //console.log(response.wind.speed);
-            console.log(response.coord.lon);
-            console.log(response.coord.lat);
+            //console.log(response.coord.lon);
+            //console.log(response.coord.lat);
 
             citynamedisplay = response.name;
             iconcode = response.weather[0].icon;
