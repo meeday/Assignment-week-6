@@ -51,7 +51,7 @@ $(document).ready(function () {
     // display current weather
     var renderWeather = function () {
 
-        var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric&appid=c8a87a10c722a1c854c14163a184e2a4";
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric&appid=c8a87a10c722a1c854c14163a184e2a4";
 
         var longtitude;
         var latitude;
@@ -84,7 +84,7 @@ $(document).ready(function () {
             //display icon: i used this particular link because it provides the icons twice as big
             var iconlink = "https://openweathermap.org/img/wn/" + iconcode + "@2x.png";
             //querylink for getting the UV index
-            var secondqueryURL = "http://api.openweathermap.org/data/2.5/uvi?appid=c8a87a10c722a1c854c14163a184e2a4&lat=" + latitude + "&lon=" + longtitude;
+            var secondqueryURL = "https://api.openweathermap.org/data/2.5/uvi?appid=c8a87a10c722a1c854c14163a184e2a4&lat=" + latitude + "&lon=" + longtitude;
             $.ajax({
                 url: secondqueryURL,
                 method: "GET"
@@ -136,7 +136,7 @@ $(document).ready(function () {
             // variable that contains the forecast icons
             var secondicon;
             // queryURL to get weather forecast for 5 days
-            var thirdqueryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=metric&appid=c8a87a10c722a1c854c14163a184e2a4";
+            var thirdqueryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=metric&appid=c8a87a10c722a1c854c14163a184e2a4";
             $.ajax({
                 url: thirdqueryURL,
                 method: "GET"
