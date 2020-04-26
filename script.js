@@ -40,7 +40,7 @@ $(document).ready(function () {
     //event listener added to the p tags generated above 
     $(".location-list").on("click", function (event) {
         cityName = event.target.innerText;
-        renderWeather(cityName);
+        renderWeather();
         $(".week-list").empty();
         
 
