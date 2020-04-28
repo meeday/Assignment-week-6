@@ -5,9 +5,10 @@
        cityName = $("#cityname").val().toLowerCase();
        $(".week-list").empty();
        // if function to make sure duplicate values aren't saved to local storage
-       if(itemsArray.indexOf(cityName) == -1){
-       itemsArray.push(cityName);
-       localStorage.setItem('items', JSON.stringify(itemsArray))};
+       if (itemsArray.indexOf(cityName) == -1) {
+           itemsArray.push(cityName);
+           localStorage.setItem('items', JSON.stringify(itemsArray))
+       };
        createList();
        $(".weather-side").show();
        $(".info-side").show();
@@ -43,7 +44,7 @@
    })
 
    // function to display current weather
-   var renderWeather = function () {
+   function renderWeather() {
 
        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric&appid=c8a87a10c722a1c854c14163a184e2a4";
 
@@ -56,16 +57,6 @@
            url: queryURL,
            method: "GET"
        }).then(function (response) {
-           //console.log(response)
-           //console.log(response.name);
-           //console.log(response.weather[0].icon);
-           //console.log(response.weather[0].description);
-           //console.log(response.main.temp);
-           //console.log(response.main.humidity);
-           //console.log(response.wind.speed);
-           //console.log(response.coord.lon);
-           //console.log(response.coord.lat);
-
            citynamedisplay = response.name;
            iconcode = response.weather[0].icon;
            $(".desc").text(response.weather[0].description);
@@ -83,20 +74,18 @@
                url: secondqueryURL,
                method: "GET"
            }).then(function (response) {
-               //console.log(response);
+               
                // to change the format of the date provided in the response I used the split method to arrange the dates to the standard british notation
                var currentDate = (response.date_iso).split("T")[0]
                var year = (currentDate).split('-')[0]
                var month = (currentDate).split('-')[1]
                var day = ((currentDate).split('-')[2])
                FinalDate = (day + '-' + month + '-' + year)
-               //console.log(FinalDate);
+               
                //append final date to html
                $(".citynamedisplay").html(citynamedisplay + '<br></br>' + FinalDate)
 
-               //console.log(year);
-               //console.log(month);
-               //console.log(day);
+              
                //append uv index to the corresponding html element
                $(".uvindex").text(response.value);
                // to change response.value into a number and then round it to the nearest integer
@@ -129,31 +118,27 @@
 
            // variable that contains the forecast icons
            var secondicon;
-           
+
            // queryURL to get weather forecast for 5 days
            var thirdqueryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=metric&appid=c8a87a10c722a1c854c14163a184e2a4";
            $.ajax({
                url: thirdqueryURL,
                method: "GET"
            }).then(function (response) {
-               //console.log(response);
+               
                var fivedaysweather = response.list;
                // i = 8 in the for loop because the api used is 5 day/ 3 hour forecast data 24hrs/3 = 8 sets of data per day
                // this was done to make sure that the data given is the next days instead of 3 hours from when the Ajax call was made
                for (var i = 8; i < fivedaysweather.length; i = i + 7) {
-                   //console.log(fivedaysweather[i].dt_txt);
+                   
                    //to change the date format 
                    var currentDate = (fivedaysweather[i].dt_txt).split(' ')[0];
-                   //console.log(currentDate);
+                   
                    var year = (currentDate).split('-')[0]
                    var month = (currentDate).split('-')[1]
                    var day = ((currentDate).split('-')[2])
                    FinalDate = (day + '-' + month + '-' + year);
-                   //console.log(year);
-                   //console.log(month);
-                   // console.log(day);
-                   //console.log(FinalDate);
-
+                   
                    // to generate the div that will contain the five day forecast
                    var newDiv = $("<div>");
                    newDiv.addClass("col forecast");
@@ -170,11 +155,12 @@
            });
        })
    }
-   
+
    // to get searches from local storage that were saved and display them in the searches list
    var itemsArray = JSON.parse(localStorage.getItem('items')) || [];
-
-       // create a list of locations already searched
+   var lastSearch = itemsArray[itemsArray.length-1];
+console.log(lastSearch)
+   // create a list of locations already searched
    for (var i = 0; i < itemsArray.length && i < 8; i++) {
        var list = $("<p>").text(itemsArray[i])
        list.addClass("locationname list-group-item list-group-item-action");
@@ -185,17 +171,20 @@
 
    $(document).ready(function () {
 
-       cityName = "";
+       cityName = lastSearch;
        //to hide the sections that contain data until after a search has been made
-       $(".weather-side").hide();
-       $(".info-side").hide();
-       $(".week-container").hide();
+       renderWeather();
+       $(".weather-side").show();
+       $(".info-side").show();
+       $(".week-container").show();
 
        // Search for a city. event listener is listening out for a keypress and the following if function makes sure that the key pressed is enter. 
        //if true then it runs the search function
        document.querySelector('#cityname').addEventListener('keypress', function (e) {
            if (e.key === 'Enter') {
                search();
+               $("#cityname").clear();
+
            }
        })
    })
