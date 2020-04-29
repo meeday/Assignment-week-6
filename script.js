@@ -7,9 +7,6 @@
        itemsArray.push(cityName);
        localStorage.setItem('items', JSON.stringify(itemsArray))
        createList();
-       $(".weather-side").show();
-       $(".info-side").show();
-       $(".week-container").show();
        renderWeather();
    }
 
@@ -35,9 +32,6 @@
        cityName = event.target.innerText;
        renderWeather();
        $(".week-list").empty();
-       $(".weather-side").show();
-       $(".info-side").show();
-       $(".week-container").show();
    })
 
    // function to display current weather
@@ -171,9 +165,7 @@
        // to render the weather for last search upon opening the dashboard
        cityName = lastSearch;
        renderWeather();
-       $(".weather-side").show();
-       $(".info-side").show();
-       $(".week-container").show();
+    
 
        // Search for a city. event listener is listening out for a keypress and the following if function makes sure that the key pressed is enter. 
        //if true then it runs the search function
