@@ -168,8 +168,8 @@
 
    $(document).ready(function () {
 
+       // to render the weather for last search upon opening the dashboard
        cityName = lastSearch;
-       //to hide the sections that contain data until after a search has been made
        renderWeather();
        $(".weather-side").show();
        $(".info-side").show();
