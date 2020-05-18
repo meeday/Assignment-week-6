@@ -150,7 +150,7 @@
    // to get searches from local storage that were saved and display them in the searches list
    var itemsArray = JSON.parse(localStorage.getItem('items')) || [];
    var lastSearch = itemsArray[itemsArray.length - 1];
-   console.log(lastSearch)
+  
    // create a list of locations already searched
    for (var i = 0; i < itemsArray.length && i < 8; i++) {
        var list = $("<p>").text(itemsArray[i])
